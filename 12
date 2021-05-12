@@ -1,0 +1,32 @@
+#define  N 5
+#define  M 8
+int *fun(int *p,int n,int x)
+{
+	   int k;
+	   for(k=0;k<n;k++)
+		   if(p[k]==x)
+			   break;
+	   if(k<n)
+		   return p+k;
+	   else
+		   return 0;
+}
+
+int main()
+{
+    int a[30],*p,n,x,k;
+	printf("请输入要处理的数据个数n(<30):");
+	scanf("%d",&n);
+	printf("请输入%d个整数：",n);
+	for(k=0;k<n;k++)
+		scanf("%d",a+k);
+	printf("请输入要查找的整数：");
+	scanf("%d",&x);
+	p = fun(a,n,x);
+	if(p==NULL)
+		printf("0\n");
+	else
+		printf("整数%d的地址是：%d\n",*p,p);
+	return 0;
+
+}
